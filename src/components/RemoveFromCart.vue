@@ -10,13 +10,13 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions } from 'vuex';
 
 export default {
-  name: "RemoveFromCart",
+  name: 'RemoveFromCart',
   props: {
     product: Object
   },
-  methods: mapActions(["removeFromCart"])
+  methods: mapActions(['removeFromCart'])
 };
 </script>

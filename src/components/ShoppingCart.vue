@@ -7,22 +7,24 @@
     <ShoppingCartSummary />
 
     <div>
-      <button class="product-btn" :disabled="orderOnLimit" @click="buy">Checkout</button>
+      <button class="product-btn" :disabled="orderOnLimit" @click="buy">
+        Checkout
+      </button>
       <p v-if="orderOnLimit">Order is over limit.</p>
     </div>
   </div>
 </template>
 
 <script>
-import ShoppingCartItem from "./ShoppingCartItem";
-import ShoppingCartSummary from "./ShoppingCartSummary";
-import { mapGetters } from "vuex";
+import ShoppingCartItem from './ShoppingCartItem';
+import ShoppingCartSummary from './ShoppingCartSummary';
+import { mapGetters } from 'vuex';
 
 export default {
-  name: "ShoppingCart",
+  name: 'ShoppingCart',
   computed: mapGetters({
-    items: "cartProducts",
-    orderOnLimit: "orderOnLimit"
+    items: 'cartProducts',
+    orderOnLimit: 'orderOnLimit'
   }),
   components: {
     ShoppingCartItem,

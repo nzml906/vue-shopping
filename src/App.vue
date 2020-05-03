@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import PageHeader from "./components/PageHeader";
-import Coupons from "./components/Coupons";
-import ProductList from "./components/ProductList";
-import ShoppingCart from "./components/ShoppingCart";
+import PageHeader from './components/PageHeader';
+import Coupons from './components/Coupons';
+import ProductList from './components/ProductList';
+import ShoppingCart from './components/ShoppingCart';
 
 export default {
-  name: "App",
+  name: 'App',
   components: { PageHeader, Coupons, ProductList, ShoppingCart }
 };
 </script>

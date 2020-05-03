@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import AddToCart from "./AddToCart";
+import AddToCart from './AddToCart';
 
 export default {
-  name: "Product",
+  name: 'Product',
   props: {
     product: Object
   },

@@ -7,18 +7,18 @@
 </template>
 
 <script>
-import Product from "./Product";
-import { mapActions, mapState } from "vuex";
+import Product from './Product';
+import { mapActions, mapState } from 'vuex';
 
 export default {
-  name: "ProductList",
+  name: 'ProductList',
   computed: mapState({
-    productRows: (state) => state.products.all,
+    productRows: state => state.products.all
   }),
-  methods: mapActions(["getProducts"]),
+  methods: mapActions(['getProducts']),
   components: { Product },
   created() {
     this.getProducts();
-  },
+  }
 };
 </script>

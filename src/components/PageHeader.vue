@@ -2,18 +2,19 @@
   <nav class="app-navbar" v-if="profile.limit">
     <span class="app-navbar__text">
       Hello
-      <strong>{{ fullName }}</strong>, your credit limit is
+      <strong>{{ fullName }}</strong
+      >, your credit limit is
       <ShoppingCartLimit :limit="profile.limit" />
     </span>
   </nav>
 </template>
 
 <script>
-import ShoppingCartLimit from "./ShoppingCartLimit";
-import { mapActions, mapState } from "vuex";
+import ShoppingCartLimit from './ShoppingCartLimit';
+import { mapActions, mapState } from 'vuex';
 
 export default {
-  name: "PageHeader",
+  name: 'PageHeader',
   computed: {
     ...mapState({
       profile: state => state.profile.data
@@ -22,7 +23,7 @@ export default {
       return `${this.profile.firstName} ${this.profile.lastName}`;
     }
   },
-  methods: mapActions(["getProfile"]),
+  methods: mapActions(['getProfile']),
   components: { ShoppingCartLimit },
   created() {
     this.getProfile();

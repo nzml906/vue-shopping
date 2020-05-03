@@ -9,8 +9,10 @@
     </div>
 
     <div class="cart-item-body">
-      <strong class="cart-item-body__title">{{item.title}}</strong>
-      <span>Quantity: {{item.quantity}} - {{item.price | formatMoney}}</span>
+      <strong class="cart-item-body__title">{{ item.title }}</strong>
+      <span
+        >Quantity: {{ item.quantity }} - {{ item.price | formatMoney }}</span
+      >
     </div>
 
     <RemoveFromCart :product="item" />
@@ -18,10 +20,10 @@
 </template>
 
 <script>
-import RemoveFromCart from "./RemoveFromCart";
+import RemoveFromCart from './RemoveFromCart';
 
 export default {
-  name: "ShoppingCartItem",
+  name: 'ShoppingCartItem',
   props: {
     item: Object
   },

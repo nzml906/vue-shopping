@@ -1,41 +1,39 @@
 <template>
   <ul class="list-group-my">
     <li class="list-group-item-my">
-      Subtotal ({{itemsQuantity}} {{'item' | pluralize(itemsQuantity) }}): {{subtotal | formatMoney}}
-      <em
-        v-if="productDiscount"
-      >
+      Subtotal ({{ itemsQuantity }} {{ 'item' | pluralize(itemsQuantity) }}):
+      {{ subtotal | formatMoney }}
+      <em v-if="productDiscount">
         <b>(30% OFF applied)</b>
       </em>
     </li>
 
     <li class="list-group-item-my">
       Shipping:
-      <span v-if="!freeShipping">{{shipping | formatMoney}}</span>
+      <span v-if="!freeShipping">{{ shipping | formatMoney }}</span>
       <em v-if="freeShipping">Free Shipping</em>
     </li>
 
-    <li class="list-group-item-my">Taxes: {{taxes | formatMoney}}</li>
+    <li class="list-group-item-my">Taxes: {{ taxes | formatMoney }}</li>
 
     <li class="list-group-item-my">
       <strong>Total:</strong>
-      <strong v-if="!totalDiscount">{{total | formatMoney}}</strong>
+      <strong v-if="!totalDiscount">{{ total | formatMoney }}</strong>
       <span v-if="totalDiscount">
-        <strike>{{total + 100 | formatMoney}}</strike>
-        <strong>{{totalWithDiscount | formatMoney}}</strong>
+        <strike>{{ (total + 100) | formatMoney }}</strike>
+        <strong>{{ totalWithDiscount | formatMoney }}</strong>
       </span>
     </li>
   </ul>
 </template>
 
-
 <script>
-import { mapGetters, mapState } from "vuex";
+import { mapGetters, mapState } from 'vuex';
 
 export default {
-  name: "ShoppingCartSummary",
+  name: 'ShoppingCartSummary',
   computed: {
-    ...mapGetters(["itemsQuantity", "subtotal", "taxes", "shipping", "total"]),
+    ...mapGetters(['itemsQuantity', 'subtotal', 'taxes', 'shipping', 'total']),
     ...mapState({
       productDiscount: state => state.shoppingCart.productDiscount,
       freeShipping: state => state.shoppingCart.freeShipping,

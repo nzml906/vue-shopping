@@ -13,18 +13,18 @@
 </template>
 
 <script>
-import Toggle from "./Toggle";
-import { mapActions, mapState } from "vuex";
+import Toggle from './Toggle';
+import { mapActions, mapState } from 'vuex';
 
 export default {
-  name: "Coupons",
+  name: 'Coupons',
   computed: mapState({
-    promotions: (state) => state.promotions.all,
+    promotions: state => state.promotions.all
   }),
-  methods: mapActions(["getPromotions", "toggleCoupon"]),
+  methods: mapActions(['getPromotions', 'toggleCoupon']),
   components: { Toggle },
   created() {
     this.getPromotions();
-  },
+  }
 };
 </script>
