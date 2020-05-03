@@ -1,0 +1,63 @@
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.vue-logo {
+  height: 50px;
+  width: 50px;
+  background: url("./../assets/logo.png") no-repeat center center #ddd;
+  background-size: 45%;
+
+  margin-right: 1.5rem;
+  border-radius: 0.3rem;
+}
+
+.cart-item-body {
+  flex: 1;
+
+  &__title {
+    display: block;
+  }
+}
+
+.cart-close-button {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+
+  &:hover,
+  &:focus {
+    color: #000;
+    text-decoration: none;
+    opacity: 0.75;
+    cursor: pointer;
+  }
+}
+
+.list-group-my {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.list-group-item-my {
+  background-color: #fff;
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+
+  margin-bottom: -1px;
+
+  border: 1px solid rgba(#000, 0.125);
+}

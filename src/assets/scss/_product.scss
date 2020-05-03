@@ -1,0 +1,156 @@
+$color-primary: #c69963;
+$color-primary-dark: #b28451;
+
+$color-secondary: #101d2c;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
+
+// FONT VARIABLES
+$font-primary: "Nunito", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+
+.shopping-cart-btn {
+  background-color: $color-primary;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}
+
+.product-container {
+  // animation: arrow 1s linear;
+  animation: point 1s both;
+
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr)
+    [full-end];
+}
+
+@keyframes point {
+  from,
+  to {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.shopping-cart {
+  grid-column: full-start / col-end 2;
+}
+
+.product-list {
+  grid-column: col-start 3 / center-end;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin: 1rem 0 3rem 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.product-card {
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  display: flex;
+  flex-direction: column;
+
+  &__img {
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// color used
+$page-orange: #ffae21;
+$page-orange-dim: #f1b053;
+$page-grey: #232733;
+$page-grey-dim: #414657;
+$page-white: #ebebe9;
+
+.product-btn {
+  opacity: 0;
+  animation: fadeUpBtnCourses 0.3s ease-in-out forwards;
+  animation-delay: 1.3s;
+  border: 0;
+  border-radius: 0.6rem;
+  outline: none;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  background: $page-grey;
+  color: $page-white;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@keyframes fadeUpBtnCourses {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrow {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.8);
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
