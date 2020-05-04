@@ -1,4 +1,4 @@
-# galaxy-store
+# vue-shopping
 
 ## Project setup
 ```
